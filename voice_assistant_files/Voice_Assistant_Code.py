@@ -4,12 +4,15 @@ import playsound
 import speech_recognition as sr
 from gtts import gTTS
 
+## for the introduction of the device for eg olivia here
 def my_speak1(text):
     tts = gTTS(text=text,lang='en')
     filename="voice1.mp3"
     tts.save(filename)
     playsound.playsound(filename)
-
+    
+    
+## for letting the user know that the command is being processed
 def my_speak2():
     text='running the command please wait'
     tts = gTTS(text=text,lang='en')
@@ -19,6 +22,7 @@ def my_speak2():
     except :
         playsound.playsound(filename2)    
 
+## for getting the voice input from the user and printing the command entered on the console.        
 def get_audio():
     recognizer = sr.Recognizer()
     with sr.Microphone() as source:
